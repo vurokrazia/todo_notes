@@ -1,24 +1,13 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Todo Note
 
-Things you may want to cover:
+App para el bootcamp de CF
 
-* Ruby version
+Para ejecutar
 
-* System dependencies
+* git clone
 
-* Configuration
+* rails db:create db:migrate
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* rails s
