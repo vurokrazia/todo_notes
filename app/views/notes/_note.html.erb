@@ -1,0 +1,18 @@
+<div class="card my-2">
+  <div class="card-body">
+    <div class="row">
+      <div class="col-8">
+       <h5 class="card-title"><%= note.title %></h5>
+        <p class="card-text <%= time_note(note) %>">Hacer antes de <%= note.remember.strftime("%d de %m del %Y a las %H:%M") %></p>
+        <p class="card-text"><%= note.body %></p>
+        <div class="d-flex flex-row-reverse">
+          <%= button_to "Destroy this note", note, method: :delete, class: "btn bg-danger bg-gradient" %>
+          <%= link_to "Edit this note", edit_note_path(note), class: "btn btn-primary mx-1"  %>
+        </div>
+      </div>
+      <div class="col-4">
+        <%= image_tag url_for(note.picture), class: "img-thumbnail rounded" %>
+      </div>
+    </div>
+  </div>
+</div>

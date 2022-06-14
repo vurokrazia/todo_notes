@@ -1,0 +1,38 @@
+<%= form_with(model: note, id: :form_notes) do |form| %>
+  <% if note.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(note.errors.count, "error") %> prohibited this note from being saved:</h2>
+
+      <ul>
+        <% note.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="mb-3">
+    <%= form.label :title, class: "form-label" %>
+    <%= form.text_field :title, class: "form-control" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :picture, class: "form-label" %>
+    <%= form.file_field :picture, class: "form-control" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :body, class: "form-label" %>
+    <%= form.text_area :body, class: "form-control" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :remember, class: "form-label" %>
+    <%= form.datetime_field :remember, class: "form-control" %>
+  </div>
+
+  <div class="d-flex flex-row-reverse my-1">
+    <%= link_to "Back to notes", notes_path, class: "btn btn-secondary mx-1"%>
+    <%= form.submit "Send", class: "btn btn-primary" %>
+  </div>
+<% end %>
